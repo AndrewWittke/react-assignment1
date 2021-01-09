@@ -1,22 +1,31 @@
-import React, {useState} from 'react';
-import Table from './Table';
 
-function Form(props) {
+import React, {useState} from 'react'
+import Table from './Table'
+
+
+
+
+
+
+
+function Form() {
    const [person, setPerson] = useState(
       {
          name: '',
          job: '',
       }
    );
-
-    
-    
-    function submitForm() {
-      props.handleSubmit(person);
-      setPerson({name: '', job: ''});
+    function handleChange(event) {
+      const { name, value } = event.target;
+      if (name === "job")
+         setPerson(
+            {name: person['name'], job: value}
+         );
+      else
+        setPerson(
+            {name: value, job: person['job']}
+         );
     }
-
-
     
     return (
         <form>
@@ -36,20 +45,6 @@ function Form(props) {
             onChange={handleChange} />
         </form>
     );
-}
-
-
-
-function handleChange(event) {
-  const { name, value } = event.target;
-  if (name === "job")
-     setPerson(
-        {name: person['name'], job: value}
-     );
-  else
-    setPerson(
-        {name: value, job: person['job']}
-     );
 }
 
 
