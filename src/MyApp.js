@@ -14,16 +14,12 @@ function MyApp() {
       });
       setCharacters(updated);
    }
-    
-    
     return (
       <div className="container">
-        <Table characterData={characters} removeCharacter={this.removeOneCharacter} />
-        <Form />
+        <Table characterData={characters} removeCharacter={removeOneCharacter} />
+            <Form />
       </div>
     )
-
-
 }
 
 export default MyApp;
