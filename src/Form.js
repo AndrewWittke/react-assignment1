@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 import React, {useState} from 'react'
@@ -10,12 +11,19 @@ import Table from './Table'
 
 
 function Form() {
+=======
+import React, {useState} from 'react';
+import Table from './Table';
+
+function Form(props) {
+>>>>>>> main
    const [person, setPerson] = useState(
       {
          name: '',
          job: '',
       }
    );
+<<<<<<< HEAD
     function handleChange(event) {
       const { name, value } = event.target;
       if (name === "job")
@@ -27,6 +35,17 @@ function Form() {
             {name: value, job: person['job']}
          );
     }
+=======
+
+    
+    
+    function submitForm() {
+      props.handleSubmit(person);
+      setPerson({name: '', job: ''});
+    }
+
+
+>>>>>>> main
     
     return (
         <form>
@@ -49,6 +68,24 @@ function Form() {
 }
 
 
+<<<<<<< HEAD
 export default Form;
 
 
+=======
+
+function handleChange(event) {
+  const { name, value } = event.target;
+  if (name === "job")
+     setPerson(
+        {name: person['name'], job: value}
+     );
+  else
+    setPerson(
+        {name: value, job: person['job']}
+     );
+}
+
+
+export default Form;
+>>>>>>> main
